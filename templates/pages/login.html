@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta charset="UTF-8">
+    <title> Entrar </title>
+   <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+   <link rel="shortcut icon" href="../imagens/logotop.png" >
+   <script language="javascript">
+
+function validar(){
+   if (document.form.email.value ==""||document.form.email.value.indexOf('@')==-1)//||document.form.email.value.indexOf('.')==-1)
+    {
+	 alert("Por favor, preencha o campo de e-mail corretamente.");
+	 document.form.email.focus();
+	 return false;
+    }
+ if (document.form.senha.value=="") 
+	{
+     alert("Por favor, preencha o campo 'senha'.");
+	 document.form.senha.focus();
+	 return false;
+    }
+}	
+</script>  
+</head>
+
+<body>
+<div class="linhafina">
+  <header id="menu" class="espacomenu"> 
+    <div id="logo" class="nomemenu">
+      <h1>Ei, garota </h1>
+    </div>
+    <nav id="abasmenu" class="menulado">
+      <ul>
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li> <a href="lute.html">#LuteComoUmaGarota</a></li>
+        <li> <a href="login.html">Login</a></li>
+        <li> <a href="cadastro.html">Cadastre-se</a></li>
+		<li> <a href="acompanhamento.html">Acompanhamento</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+<div class="menupag" > 
+</div>
+<br/>
+<br/>
+<div id="borda3" align="center">
+<form name="form" method="post" action="acompanhamento.html" onsubmit="return validar();">
+
+ <h2> Login </h2>
+ Email: <input type="text" name="email" /><br/><br/> 
+ Senha: <input type="text" name="senha" /><br/><br/> 
+ <div>
+          <input name="submit" type="submit" value="Enviar">
+ </div>		  
+ </form>
+ </div>
+  <br/>
+  <div id="borda4" align="center">
+  <p align="center"> Não tem conta? <a href="cadastro.html" > Cadastre-se </a> </p>
+  </div>
+<br/> 
+<p align= "center"> “Mulher… Que sejas sempre lembrada, não apenas por um dia, mas no dia a dia… Que sejas festejada, <br/> não por convenção, mas pelo seu valor, sua força, seu coração. Que seja respeitada com todo carinho, e todo amor… Hoje e sempre!” <br/>
+Valéria Milanês </p> <br/>
+
+<div class="linhagrossa">
+<footer id="footer"> 
+    <div class="centro">
+            <h6 class="title">Gurias Empoderadas</h6>
+      <address>
+      Por: Ana Carolina e Emanuela Fernandes <br/>
+      </address>
+      <ul>
+        <li><span class="icon-time"></span> Guanambi/2019, abril 7:00pm</li>
+        <li><span class="icon-phone"></span> +55 (77) 981552988 / 998124614</li>
+        <li><span class="icon-envelope-alt"></span> gurias@hotmail.com</li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
