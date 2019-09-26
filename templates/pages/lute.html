@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="linhafina">
+  <header id="menu" class="espacomenu"> 
+    <div id="logo" class="nomemenu">
+      <h1> Ei, garota </h1>
+    </div>
+    <nav id="abasmenu" class="menulado">
+      <ul>
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li> <a href="lute.html">#LuteComoUmaGarota</a></li>
+        <li> <a href="login.html">Login</a></li>
+        <li> <a href="cadastro.html">Cadastre-se</a></li>
+		<li> <a href="acompanhamento.html">Acompanhamento</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+<div class="menupag" > 
+</div>
+<div>
+  <main id="ajuste"> 
+    <h1> De Mulher pra Mulher </h1>
+    <img class="imgr corborda imagenstam" src="../imagens/powertop5.jpg" id="img"> 
+    <p class="p"> Ei, garota, você ja se olhou no espelho hoje e viu o quanto você é incrível? Ei, garota, não abaixe a cabeça, olhe em sua volta, o mundo te espera. Ei, garota, 
+	você sabe que pode e deve ser livre?. <br/> Você merece mais que um status de relacionamento no facebook e todas as rosas da floricultura que tem perto da sua casa. Você merece 
+	sair para passear e comer vários churros duma vez só porque, veja bem, a vida é muito dura e as vezes não se sabe, simplismente, como seguir. E seguir não depende de ter o melhor
+	namorado do mundo; muito menos se trata de quantas vezes você consegue dizer "eu te amo" sem parecer tola ou sensível demais. Seguir implica em você conseguir se desvencilhar da 
+	rotina pesada que a semana impõe sobre seus ombros: então você se levanta numa quarta feira, 
+      </p>
+    <p class="p"> prepara seu próprio café, aprecia sua própria companhia e se da a oportunidade de não fazer nada. O mundo não vai parar porque você decidiu tirar um tempo para você. </p>
+    <img class="imgl corborda imagenstam" src="../imagens/power8.jfif" id="img">
+    <p class="p"> Sabe porque você merece muito mais que o raso que esse mundo oferece? porque enquanto a gente não tirar de nós a ideia de que precisamos de outrem para "ser"
+	muitas coisas estaremos, sempre subordinadas a solidão do mundo.E a solidão do mundo, nada mais é que um código em braile que ainda não conseguimos e nem sabemos como interpretar. Só aprendemos sobre nos mesmas e como 
+	somos resilientes, forte e incríveis, quando entedemos que nada, nem ninguém fará o terremoto interno acontecer. </p>
+    <p class="p">  E isto eu chamo de felicidade plena. A felicidade é você. Compre seu próprio buquê 
+	de orquídeas e relacione-se profundamente com si mesma. AGORA. Feche os olhos e lembre-se: Você é espetacular e merece todo amor do mundo, o seu amor. SEJA O AMOR DA SUA VIDA. 	</p>
+    <p class="p"></p>
+    <br/> <br/> <h6>Índice de violência contra a mulher</h6>
+    <table>
+      <thead>
+        <tr>
+          <th>Ano</th>
+          <th>Estupro</th>
+          <th>Mortes</th>
+          <th>Denúncia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2015</td>
+          <td>45,6 mil</td>
+          <td>492 feminicídios</td>
+          <td>749.024 mil</td>
+        </tr>
+        <tr>
+          <td>2016</td>
+          <td>49,4 mil</td>
+          <td>812 feminicídios</td>
+          <td>1.133.345 mil</td>
+        </tr>
+        <tr>
+          <td>2017</td>
+          <td>60 mil</td>
+          <td>946 feminicídios</td>
+          <td>156.839 mil</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="comments">
+      <h2>Relatos</h2>
+      <ul>
+        <li>
+          <article>
+            <header>
+              <figure class="avatar"><img src="../imagens/casos1.jpg"></figure>
+              <address>
+               <a href="https://www.instagram.com/evalluana/">Eva Luana</a> 
+              </address>
+            </header>
+            <div class="comcont">
+              <p>"Essa é a minha luta e eu vou lutar em todas as esferas. Eu vou lutar por elas." <br/> <br/> </p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article>
+            <header>
+              <figure class="avatar"><img src="../imagens/casos2.jpeg" alt=""></figure>
+              <address>
+               <a href="https://www.mariellefranco.com.br/quem-e-marielle-franco-vereadora">Marielle Franco</a>
+              </address>
+            </header>
+            <div class="comcont">
+              <p>"O que é ser mulher? O que cada uma de nós já deixou de fazer ou fez com algum nível de dificuldade pela identidade de gênero, pelo fato de ser mulher? A pergunta não é retórica, ela é objetiva, é para refletirmos no dia a dia, no passo a passo de todas as mulheres, no conjunto da maioria da população, como se costuma falar, que infelizmente é sub-representada"</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article>
+            <header>
+              <figure class="avatar"><img src="../imagens/casos3.jpg" ></figure>
+              <address>
+               <a href="https://www.instagram.com/malala/">Malala Yousafzai</a>
+              </address>
+            </header>
+            <div class="comcont">
+              <p class="p">"Eu disse para mim mesma: "Malala, você deve ser corajosa. Você não deve ter medo de ninguém. Você só está tentando se educar. Você não está cometendo nenhum crime"."</p>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <h2>Deixe seu relato </h2>
+      <form name="form" method="post" action="cadastro.html" onsubmit="return validar();">
+        <div class="asideordem">
+          <label for="name"> Nome <span>*</span></label>
+          <input type="text" name="name" id="name" value="" size="22">
+        </div>
+        <div class="asideordem">
+          <label for="email">E-mail <span>*</span></label>
+          <input type="text" name="email" id="email" value="" size="22">
+        </div>
+        <div class="asideordem">
+          <label for="url"> Data</label>
+          <input type="date" name="url" id="url" value="" size="22">
+        </div>
+        <div class="block">
+          <label for="comment"> Escreva seu relato </label>
+          <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+        </div>
+        <div>
+          <input name="reset" type="reset" value="Enviar">
+          <input name="submit" type="submit" value="Precisa de ajuda?" > 
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+<div class="linhagrossa">
+  <footer id="footer"> 
+    <div class="centro">
+            <h6 class="title">Gurias Empoderadas</h6>
+      <address>
+      Por: Ana Carolina e Emanuela Fernandes <br/>
+      </address>
+      <ul>
+        <li><span class="icon-time"></span> Guanambi/2019, abril 7:00pm</li>
+        <li><span class="icon-phone"></span> +55 (77) 981552988 / 998124614</li>
+        <li><span class="icon-envelope-alt"></span> gurias@hotmail.com</li>
+      </ul>
+    </div>
+  </footer>
+{% endblock conteudo %}
