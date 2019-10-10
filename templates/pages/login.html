@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
     <title> Entrar </title>
-   <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ url_for('static', filename='css/layout.css') }}" rel="stylesheet" type="text/css" media="all">
    <link rel="shortcut icon" href="../imagens/logotop.png" >
    <script language="javascript">
 
@@ -31,11 +31,11 @@ function validar(){
     </div>
     <nav id="abasmenu" class="menulado">
       <ul>
-        <li class="active"><a href="../index.html">Home</a></li>
-        <li> <a href="lute.html">#LuteComoUmaGarota</a></li>
-        <li> <a href="login.html">Login</a></li>
-        <li> <a href="cadastro.html">Cadastre-se</a></li>
-		<li> <a href="acompanhamento.html">Acompanhamento</a></li>
+        <li class="active"><a href="../index">Home</a></li>
+        <li> <a href="/lute">#LuteComoUmaGarota</a></li>
+        <li> <a href="/login">Login</a></li>
+        <li> <a href="/cadastro">Cadastre-se</a></li>
+		<li> <a href="/acompanhamento">Acompanhamento</a></li>
       </ul>
     </nav>
   </header>
@@ -57,7 +57,7 @@ function validar(){
  </div>
   <br/>
   <div id="borda4" align="center">
-  <p align="center"> Não tem conta? <a href="cadastro.html" > Cadastre-se </a> </p>
+  <p align="center"> Não tem conta? <a href="/cadastro" > Cadastre-se </a> </p>
   </div>
 <br/> 
 <p align= "center"> “Mulher… Que sejas sempre lembrada, não apenas por um dia, mas no dia a dia… Que sejas festejada, <br/> não por convenção, mas pelo seu valor, sua força, seu coração. Que seja respeitada com todo carinho, e todo amor… Hoje e sempre!” <br/>
