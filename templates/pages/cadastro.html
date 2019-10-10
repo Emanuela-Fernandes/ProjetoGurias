@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
     <title> Cadastre-se </title>
-   <link href="../css/layout.css" rel="stylesheet" type="text/css" media="all">
+   <link href="{{ url_for('static', filename='css/layout.css') }}" rel="stylesheet" type="text/css" media="all">
    <link rel="shortcut icon" href="../imagens/logotop.png" >
    <script language="javascript">
 
@@ -68,11 +68,11 @@ if (document.form.denuncia.value=="")
     </div>
     <nav id="abasmenu" class="menulado">
       <ul>
-        <li class="active"><a href="../index.html">Home</a></li>
-        <li> <a href="lute.html">#LuteComoUmaGarota</a></li>
-        <li> <a href="login.html">Login</a></li>
-        <li> <a href="cadastro.html">Cadastre-se</a></li>
-		<li> <a href="acompanhamento.html">Acompanhamento</a></li>
+        <li class="active"><a href="../index">Home</a></li>
+        <li> <a href="/lute">#LuteComoUmaGarota</a></li>
+        <li> <a href="/login">Login</a></li>
+        <li> <a href="/cadastro">Cadastre-se</a></li>
+		<li> <a href="/acompanhamento">Acompanhamento</a></li>
       </ul>
     </nav>
 </div>
@@ -107,7 +107,7 @@ if (document.form.denuncia.value=="")
   <br/>
 
   <div id="borda2" align="center">
-  <p align="center"> Já tem conta? <a href="login.html" > Conecte-se </a> </p>
+  <p align="center"> Já tem conta? <a href="/login" > Conecte-se </a> </p>
   </div>
   <br/>
   <br/>
