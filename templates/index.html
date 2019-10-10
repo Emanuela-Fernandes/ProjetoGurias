@@ -8,11 +8,11 @@
     </div>
     <nav id="abasmenu" class="menulado">
       <ul>
-        <li class="active"><a href="index.html">Home</a></li>
-        <li> <a href="pages/lute.html">#LuteComoUmaGarota</a></li>
-        <li> <a href="pages/login.html">Login</a></li>
-        <li> <a href="pages/cadastro.html">Cadastre-se</a></li>
-		<li> <a href="pages/acompanhamento.html">Acompanhamento</a></li>
+        <li class="active"><a href="/index">Home</a></li>
+        <li> <a href="/lute">#LuteComoUmaGarota</a></li>
+        <li> <a href="/login">Login</a></li>
+        <li> <a href="/cadastro">Cadastre-se</a></li>
+		<li> <a href="/acompanhamento">Acompanhamento</a></li>
       </ul>
     </nav>
   </header>
@@ -27,22 +27,22 @@ Margaret Thatcher</p>
 </div>
   <main id="ajuste">  
     <div class="centro">
-      <article class="colunasfotos"><img class="imagenstam corborda" id="img" src="imagens/power7.jpg" id="img"> 
+      <article class="colunasfotos"><img class="imagenstam corborda" src="{{ url_for('static', filename='imagens/power7.jpg') }}" id="img"> 
         <h2 class="naoespaco tam"> Sobre </h2> 
         <p class="naoespaco"> Feito com o intuito de oferecer apoio a todas vocês, mulheres, que já vivenciaram qualquer tipo de opressão diante a essa sociedade machista.</p>
         
       </article>
-      <article class="colunasfotos"><img class="imagenstam corborda" src="imagens/powertop2.jpg" id="img">
+      <article class="colunasfotos"><img class="imagenstam corborda" src="{{ url_for('static', filename='imagens/powertop2.jpg') }}" id="img">
         <h2 class="naoespaco tam">Girl Power </h2>
         <p class="naoespaco"> "Feminismo não é sobre tornar as mulheres fortes. As mulheres já são fortes. É sobre mudar a forma como o mundo vê essa força." Seja o amor da sua vida.  </p>
      
       </article>
-      <article class="colunasfotos"><img class="imagenstam corborda" src="imagens/logo2.jfif" id="img">
+      <article class="colunasfotos"><img class="imagenstam corborda" src="{{ url_for('static', filename='imagens/logo2.jfif') }}" id="img">
         <h2 class="naoespaco tam">Feminicidio</h2>
         <p class="naoespaco"> Sancionada em março de 2015, a Lei do feminicídio foi criada com o intuito oferecer uma maior proteção as mulheres. # Briga De Marido e Mulher Mete a Colher. </p>
-        
+       
       </article>
-      <article class="colunasfotos"><img class="imagenstam corborda" src="imagens/powertop.jpg" id="img">
+      <article class="colunasfotos"><img class="imagenstam corborda" src="{{ url_for('static', filename='imagens/powertop.jpg') }}" id="img">
         <h2 class="naoespaco tam">Denuncie</h2>
         <p class="naoespaco"> O Brasil é o 5º país no ranking mundial na violência contra a mulher. Não se cale. Estamos todos com você. DENUNCIE! Ligue 180 ou fale conosco. </p>
         
