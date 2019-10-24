@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'd77a98b1c04bc37e50787352e80323e3'
 
 @app.route('/index')
 def index():
