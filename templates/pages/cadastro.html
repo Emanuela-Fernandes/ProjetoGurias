@@ -1,4 +1,4 @@
-<html>
+<!--<html>
 <head>
 <meta charset="UTF-8">
     <title> Cadastre-se </title>
@@ -102,7 +102,7 @@ if (document.form.denuncia.value=="")
  <input type="radio" name="denuncia" /> Sim  
  <input type="radio" name="denuncia" /> Não <br/>  <br/>
  <input type="submit" name="submit" value="Enviar" onclick="enviar()">
- </form>
+ </form> 
   </div>    
   <br/>
 
@@ -126,4 +126,41 @@ if (document.form.denuncia.value=="")
     </div>
   </footer>
 </body>
-</html>
+</html> -->
+
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="menupag" > 
+  </div>
+  <br/>
+  <br/>
+  <div id="borda" align="center">
+  <h2> Cadastro </h2>
+  <form name="form" method="post" action="login.html" onsubmit="return validar();">
+   {{formulario.username.label}}
+   {{formulario.username}} <br/>
+   {{formulario.datadenascimento.label}}
+   {{formulario.datadenascimento}} <br/>
+   {{formulario.email.label}}
+   {{formulario.email}} <br/>
+   {{formulario.repitaemail.label}}
+   {{formulario.repitaemail}} <br/>
+   {{formulario.senha.label}}
+   {{formulario.senha}} <br/>
+   {{formulario.repitasenha.label}}
+   {{formulario.repitasenha}} <br/>
+   <input type="submit" name="submit" value="Enviar" onclick="enviar()">	
+   </form> 
+    </div>    
+    <br/>
+	  
+</form>
+</div>
+<br/>
+<div id="borda4" align="center">
+<p align="center"> Não tem conta? <a href="/cadastro" > Cadastre-se </a> </p>
+</div>
+{% endblock conteudo %}
+
+
