@@ -1,18 +1,32 @@
-from flask_wtf import Flaskform
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 
-class CadastroUsuarioForm(Flaskform)
+class CadastraUsuarioForm(FlaskForm):
     username = StringField(
-        'Usuário',
-        validators=[DataRequerired(), Length(min=2, max=80)]
+        'Nome:',
+        validators=[DataRequired(), Length(min=2, max=80)]
+    )
+    datadenascimento = StringField(
+        'Data de nascimento:',
+        validators=[DataRequired(), Length(min=2, max=80)]
     )
     email = StringField (
-        'Email'
-        validators[DataRequerired()]
+        'E-mail:',
+        validators=[DataRequired(), Email()]
     )
-    repita_senha = PassawordField (
-        'Repita a Senha'
-        validators[DataRequerired(), EqualTo(senha)]
+    repitaemail = StringField (
+        'Repita E-mail:',
+        validators=[DataRequired(), EqualTo(email)]
+    )
+    senha = PasswordField (
+        'Senha:',
+        validators=[DataRequired()]
+    )
+    repitasenha = PasswordField (
+        'Repita a Senha:',
+        validators=[DataRequired(), EqualTo(senha)]
     )
     botao = SubmitField('Cadastrar')
         
