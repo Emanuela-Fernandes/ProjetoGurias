@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-from forms import CadastraUsuarioForm
+from forms import CadastraUsuarioForm, LoginUsuarioForm
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///projetoguriais.db'
@@ -24,7 +24,8 @@ def index():
     return render_template('index.html')
 @app.route('/login')
 def login():
-    return render_template('pages/login.html')
+    form=LoginUsuarioForm()
+    return render_template('pages/login.html', formulario=form)
 @app.route('/cadastro', methods=['GET', 'Post'])
 def cadastro():
 
