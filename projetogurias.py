@@ -13,6 +13,8 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     passaword = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
+    datadenascimento = db.Column(db.Date(), nullable =False)
+
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -36,6 +38,5 @@ def lute():
 def acompanhamento():
     return render_template('pages/acompanhamento.html')
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port = 5555)
