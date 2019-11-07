@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-from forms import CadastraUsuarioForm, LoginUsuarioForm
+from forms import CadastraUsuarioForm, LoginUsuarioForm, DeixeSeuRelatorioForm
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///projetoguriais.db'
@@ -45,7 +45,9 @@ def lute():
     return render_template('pages/lute.html')
 @app.route('/acompanhamento')
 def acompanhamento():
-    return render_template('pages/acompanhamento.html')
+    form= DeixeSeuRelatorioForm()
+
+    return render_template('pages/acompanhamento.html', formulario=form)
 
 if __name__ == '__main__':
     app.run(debug=True, port = 5555)
