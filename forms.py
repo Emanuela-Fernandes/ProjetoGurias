@@ -30,3 +30,13 @@ class CadastraUsuarioForm(FlaskForm):
     )
     botao = SubmitField('Cadastrar')
         
+class LoginUsuarioForm(FlaskForm):
+    email = StringField (
+        'E-mail:',
+        validators=[DataRequired(), Email()]
+    )
+    senha = PasswordField (
+        'Senha:',
+        validators=[DataRequired()]
+    )
+    botao = SubmitField('Fazer Login')
