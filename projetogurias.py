@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from forms import CadastraUsuarioForm, LoginUsuarioForm, DeixeSeuRelatorioForm
@@ -8,29 +9,35 @@ app.config['SECRET_KEY'] = 'd77a98b1c04bc37e50787352e80323e3'
 
 db = SQLAlchemy(app)
 
-class User(db.Model):
+class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    passaword = db.Column(db.String(20), nullable=False)
+    senha = db.Column(db.String(20), nullable=False)
+    repitasenha = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
+    repitaemail = db.Column(db.String(120), unique=True, nullable=False)
     datadenascimento = db.Column(db.Date(), nullable =False)
 
-class Visitante(db.Model):
+
+    
+
+class Relato(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    datadenascimento = db.Column(db.Date(), nullable =False)
+    data = db.Column(db.Date, nullable =False)
     escrevaRelato = db.Column(db.String(1000))
 
 
 
     def __repr__(self):
         return '<User %r>' % self.username
+
+
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template('index.html')
-@app.route('/login')
+@app.route('/login',  methods=['GET', 'Post'])
 def login():
     form=LoginUsuarioForm()
     return render_template('pages/login.html', formulario=form)
@@ -38,16 +45,36 @@ def login():
 def cadastro():
 
     form= CadastraUsuarioForm()
-
+    if form.validate_on_submit():
+        C=Usuario()
+        C.username=form.username.data
+        C.datadenascimento=form.datadenascimento.data
+        C.email=form.email.data
+        C.repitaemail=form.repitaemail.data
+        C.senha=form.senha.data
+        C.repitasenha=form.repitasenha.data
+        db.session.add(r)
+        db.session.commit()
+    
     return render_template('pages/cadastro.html', formulario=form)
-@app.route('/lute')
+@app.route('/lute',  methods=['GET', 'Post'])
 def lute():
-    return render_template('pages/lute.html')
+
+    form= DeixeSeuRelatorioForm()
+    #print form.validate_on_submit()
+    if form.validate_on_submit():
+        r=Relato()
+        r.username=form.username.data
+        r.data=datetime.now()
+        r.escrevaRelato=form.escrevaRelato.data
+        db.session.add(r)
+        db.session.commit()
+
+    return render_template('pages/lute.html', formulario=form)
+
 @app.route('/acompanhamento')
 def acompanhamento():
-    form= DeixeSeuRelatorioForm()
-
-    return render_template('pages/acompanhamento.html', formulario=form)
+    return render_template('pages/acompanhamento.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port = 5555)
+    app.run(debug=True)
