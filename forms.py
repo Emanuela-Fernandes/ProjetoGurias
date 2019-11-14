@@ -42,20 +42,14 @@ class LoginUsuarioForm(FlaskForm):
     botao = SubmitField('Fazer Login')
 
 class DeixeSeuRelatorioForm(FlaskForm):
-     username = StringField(
+    username = StringField(
         'Nome:',
         validators=[DataRequired(), Length(min=2, max=80)]
     )
-    email = StringField (
-        'E-mail:',
-        validators=[DataRequired(), Email()]
-    )
-    datadenascimento = StringField(
-        'Data de nascimento:',
-        validators=[DataRequired(), Length(min=2, max=80)]
-    )
+   
     escrevaRelato = StringField(
-        'Data de nascimento:',
-        validators=[Length(min=2, max=1000)]
+        'Escreva seu relato:',
+        validators=[DataRequired(), Length(min=2, max=3000)]
     )
+    botao = SubmitField('Enviar')
 
