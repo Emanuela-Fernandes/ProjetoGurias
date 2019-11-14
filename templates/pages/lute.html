@@ -3,7 +3,6 @@
 {% block conteudo %}
 <div class="menupag" > 
 </div>
-<div>
   <main id="ajuste"> 
     <h1> De Mulher pra Mulher </h1>
     <img class="imgr corborda imagenstam" src="{{ url_for('static', filename='imagens/powertop5.jpg') }}" id="img"> 
@@ -20,7 +19,6 @@
 	somos resilientes, forte e incríveis, quando entedemos que nada, nem ninguém fará o terremoto interno acontecer. </p>
     <p class="p">  E isto eu chamo de felicidade plena. A felicidade é você. Compre seu próprio buquê 
 	de orquídeas e relacione-se profundamente com si mesma. AGORA. Feche os olhos e lembre-se: Você é espetacular e merece todo amor do mundo, o seu amor. SEJA O AMOR DA SUA VIDA. 	</p>
-    <p class="p"></p>
     <br/> <br/> <h6>Índice de violência contra a mulher</h6>
     <table>
       <thead>
@@ -95,9 +93,10 @@
           </article>
         </li>
       </ul>
-      <h2>Deixe seu relato </h2>
-      <form name="form" method="post" action="cadastro.html" onsubmit="return validar();">
-        <div class="asideordem">
+    </div>
+  
+  
+       <!-- <div class="asideordem">
           <label for="name"> Nome <span>*</span></label>
           <input type="text" name="name" id="name" value="" size="22">
         </div>
@@ -116,9 +115,28 @@
         <div>
           <input name="reset" type="reset" value="Enviar">
           <input name="submit" type="submit" value="Precisa de ajuda?" > 
+        </div> -->
+        <h2>Deixe seu relato </h2>
+        <div align="center">
+            <form name="form" method="post" onsubmit="return validar();">
+                <div class="asideordem">
+                  {{formulario.username.label}}
+                  {{formulario.username}} <br/>
+                  <br/>
+                </div>
+              <div class="block">
+                  {{formulario.escrevaRelato.label}}
+                  {{formulario.escrevaRelato}} <br/>
+                  <br/>
+              </div>
+              <div>
+                  {{formulario.botao}}
+                  <form action='/acompanhamento'>
+                    <input name="submit" type="submit" value="Precisa de ajuda?" > 
+                  </form>
+                  <br/>
+              </div>
+            </form>
         </div>
-      </form>
-    </div>
-  </main>
-</div>
-{% endblock conteudo %}
+    </main>
+  {% endblock conteudo %}
