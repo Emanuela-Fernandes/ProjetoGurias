@@ -22,11 +22,11 @@ class CadastraUsuarioForm(FlaskForm):
     )
     senha = PasswordField (
         'Senha:',
-        validators=[DataRequired()]
+        validators=[DataRequired(), Length(min=2, max=80)]
     )
     repitasenha = PasswordField (
         'Repita a Senha:',
-        validators=[DataRequired(), EqualTo(senha)]
+        validators=[DataRequired(),Length(min=2, max=80), EqualTo(senha)]
     )
     botao = SubmitField('Cadastrar')
         
