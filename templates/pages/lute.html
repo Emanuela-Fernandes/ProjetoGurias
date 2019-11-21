@@ -118,7 +118,7 @@
         </div> -->
         <h2>Deixe seu relato </h2>
         <div align="center">
-            <form name="form" method="post" onsubmit="return validar();">
+            <form name="form" method="post" >
                 <div class="asideordem">
                   {{formulario.username.label}}
                   {{formulario.username}} <br/>
@@ -131,12 +131,13 @@
               </div>
               <div>
                   {{formulario.botao}}
-                  <form action='/acompanhamento'>
+                  
+              </div>
+            </form>
+            <form action='/acompanhamento'>
                     <input name="submit" type="submit" value="Precisa de ajuda?" > 
                   </form>
                   <br/>
-              </div>
-            </form>
         </div>
     </main>
   {% endblock conteudo %}
