@@ -14,7 +14,6 @@ class Usuario(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     senha = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    datadenascimento = db.Column(db.Date(), nullable =False)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -30,7 +29,7 @@ class Relato(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
-
+#db.create_all()
 
 @app.route('/')
 @app.route('/index')
@@ -52,7 +51,6 @@ def cadastro():
     if form.validate_on_submit():
         C=Usuario()
         C.username=form.username.data
-        C.datadenascimento=form.datadenascimento.data
         C.email=form.email.data
         C.senha=form.senha.data
         db.session.add(C)
@@ -64,9 +62,7 @@ def cadastro():
 def lute():
 
     form= DeixeSeuRelatorioForm()
-    #print form.validate_on_submit()
     if form.validate_on_submit():
-   #     print ('eu entrei aq')
         r=Relato()
         r.username=form.username.data
         r.data=datetime.now()
@@ -79,10 +75,6 @@ def lute():
 @app.route('/acompanhamento')
 def acompanhamento():
     return render_template('pages/acompanhamento.html')
-
-#@app.route('/mensagens')
-#def acompanhamento():
-#    return render_template('pages/mensagens.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
