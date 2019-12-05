@@ -94,32 +94,12 @@
         </li>
       </ul>
     </div>
-  
-  
-       <!-- <div class="asideordem">
-          <label for="name"> Nome <span>*</span></label>
-          <input type="text" name="name" id="name" value="" size="22">
-        </div>
-        <div class="asideordem">
-          <label for="email">E-mail <span>*</span></label>
-          <input type="text" name="email" id="email" value="" size="22">
-        </div>
-        <div class="asideordem">
-          <label for="url"> Data</label>
-          <input type="date" name="url" id="url" value="" size="22">
-        </div>
-        <div class="block">
-          <label for="comment"> Escreva seu relato </label>
-          <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
-        </div>
-        <div>
-          <input name="reset" type="reset" value="Enviar">
-          <input name="submit" type="submit" value="Precisa de ajuda?" > 
-        </div> -->
         <h2>Deixe seu relato </h2>
         <div align="center">
             <form name="form" method="post" >
                 <div class="asideordem">
+                  {{formulario.hidden_tag()}}
+                  {{formulario.csrf_token}}
                   {{formulario.username.label}}
                   {{formulario.username}} <br/>
                   <br/>
