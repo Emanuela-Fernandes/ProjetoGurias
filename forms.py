@@ -8,26 +8,16 @@ class CadastraUsuarioForm(FlaskForm):
         'Nome:',
         validators=[DataRequired(), Length(min=2, max=80)]
     )
-    datadenascimento = StringField(
-        'Data de nascimento:',
-        validators=[DataRequired(), Length(min=2, max=80)]
-    )
     email = StringField (
         'E-mail:',
         validators=[DataRequired(), Email()]
     )
-    repitaemail = StringField (
-        'Repita E-mail:',
-        validators=[DataRequired(), EqualTo(email)]
-    )
+    
     senha = PasswordField (
         'Senha:',
         validators=[DataRequired(), Length(min=2, max=80)]
     )
-    repitasenha = PasswordField (
-        'Repita a Senha:',
-        validators=[DataRequired(),Length(min=2, max=80), EqualTo(senha)]
-    )
+    
     botao = SubmitField('Cadastrar')
         
 class LoginUsuarioForm(FlaskForm):
